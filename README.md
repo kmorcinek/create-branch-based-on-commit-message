@@ -14,12 +14,11 @@ Takes the last commit message and checkouts to new branch.
 
 Some examples how the commit message is transformed to branch name
 
-[//]: # "make it a table"
-`"feat: #OLDM-324 create product endpoint"` -> `"feat/OLDM-324/create-product-endpoint"`
-
-`"fix: fix email"` -> `"fix/fix-email"`
-
-`"add new TODO"` -> `"add-new-todo"`
+| Commit message | | Branch name |
+| ----------- | ----------- | ----------- |
+| `"feat: #OLDM-324 create product endpoint"` | &rarr; | `"feat/OLDM-324/create-product-endpoint"` |
+| `"fix: fix email"` | &rarr; | `"fix/fix-email"` |
+| `"add new TODO"` | &rarr; | `"add-new-todo"` |
 
 ## How to use
 
