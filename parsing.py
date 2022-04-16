@@ -20,15 +20,15 @@ def parsing(commit):
 
         step3 = step2.replace(" ", "-")
     elif commit.find(":") > -1:
-        step1 = commit \
+        step2 = commit \
             .replace(": ", "/")
 
-        step3 = step1.replace(" ", "-").lower()
+        step3 = step2.replace(" ", "-").lower()
     else:
-        step1 = commit \
+        step2 = commit \
             .replace(": ", "/")
 
-        step3 = step1.replace(" ", "-").lower()
+        step3 = step2.replace(" ", "-").lower()
 
     return step3 \
         .replace("`", "") \
