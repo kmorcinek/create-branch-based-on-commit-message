@@ -29,17 +29,22 @@ def parsing(commit):
 
     step3 = step2.replace(" ", "-")
 
-    return step3 \
-        .replace("`", "") \
-        .replace("*", "") \
-        .replace("?", "") \
-        .replace("[", "") \
-        .replace("]", "") \
-        .replace(",", "") \
-        .replace('"', "") \
-        .replace("'", "") \
-        .replace("(", "") \
-        .replace(")", "")
+    unwanted_chars = [
+        '`',
+        '*',
+        '?',
+        '[',
+        ']',
+        ',',
+        '"',
+        '\'',
+        '(',
+        ')'
+    ]
+    for c in unwanted_chars:
+        step3 = step3.replace(c, "")
+
+    return step3
 
 
 assert parsing("feat: #OLDM-324 create product endpoint") == "feat/OLDM-324/create-product-endpoint"
