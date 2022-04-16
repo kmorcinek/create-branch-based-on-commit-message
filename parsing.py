@@ -2,8 +2,6 @@ import sys
 
 argv = sys.argv[1:]
 
-# print(argv)
-
 
 def parsing(commit):
     commit = commit \
