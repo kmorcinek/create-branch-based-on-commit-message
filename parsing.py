@@ -24,7 +24,6 @@ def parsing(commit):
 
     else:
         step2 = commit \
-            .replace(": ", "/") \
             .lower()
 
     step3 = step2.replace(" ", "-")
