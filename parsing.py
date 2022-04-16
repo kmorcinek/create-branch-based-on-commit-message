@@ -43,19 +43,11 @@ def parsing(commit):
         .replace(")", "")
 
 
-# print("")
-
-# parsing("feat: #OLDM-324 SKLF SKdlfja asldfk")
-# parsing("fix: #WW-11 improve error handling")
-
-# print("")
-
-assert parsing("feat: #OLDM-324 SKLF SKdlfja asldfk") == "feat/OLDM-324/sklf-skdlfja-asldfk"
+assert parsing("feat: #OLDM-324 create product endpoint") == "feat/OLDM-324/create-product-endpoint"
 assert parsing("fix: fix email") == "fix/fix-email"
 assert parsing("add new TODO") == "add-new-todo"
 # assert parsing("fix: #WW-11 improve error handling") == "fix/WW-11/wrong-branch"
 
 result = parsing(argv[0])
 
-import sys
 sys.stdout.write(result)
