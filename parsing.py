@@ -9,7 +9,6 @@ def parsing(commit):
     commit = commit \
         .replace("/", "")
 
-    step3 = ""
     if commit.find(": #") > -1:
         step1 = commit \
             .replace(": #", "/")
@@ -18,19 +17,17 @@ def parsing(commit):
 
         step2 = step1[:space_pos] + "/" + step1[space_pos + 1:].lower()
 
-        step3 = step2.replace(" ", "-")
     elif commit.find(":") > -1:
         step2 = commit \
             .replace(": ", "/") \
             .lower()
 
-        step3 = step2.replace(" ", "-")
     else:
         step2 = commit \
             .replace(": ", "/") \
             .lower()
 
-        step3 = step2.replace(" ", "-")
+    step3 = step2.replace(" ", "-")
 
     return step3 \
         .replace("`", "") \
