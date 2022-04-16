@@ -6,10 +6,12 @@ argv = sys.argv[1:]
 
 
 def parsing(commit):
+    commit = commit \
+        .replace("/", "")
+
     step3 = ""
     if commit.find(": #") > -1:
         step1 = commit \
-            .replace("/", "") \
             .replace(": #", "/")
 
         space_pos = step1.find(" ")
@@ -19,13 +21,11 @@ def parsing(commit):
         step3 = step2.replace(" ", "-")
     elif commit.find(":") > -1:
         step1 = commit \
-            .replace("/", "") \
             .replace(": ", "/")
 
         step3 = step1.replace(" ", "-").lower()
     else:
         step1 = commit \
-            .replace("/", "") \
             .replace(": ", "/")
 
         step3 = step1.replace(" ", "-").lower()
