@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 COMMIT_MSG=`git show -s --format=%s`
-OUT=`python3 parsing.py "$COMMIT_MSG"`
+
+# Hardcoded path to python script, make it independent later
+OUT=`python3 /usr/local/bin/parsing.py "$COMMIT_MSG"`
 
 git checkout -b $OUT
