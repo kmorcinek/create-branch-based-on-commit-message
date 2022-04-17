@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+BRANCH_NAME="$1"
+TAG_NAME="history/$BRANCH_NAME"
+
+echo "tag: $TAG_NAME "
+
+COMMAND_TO_DELETE="git branch -D $BRANCH_NAME"
+echo "$COMMAND_TO_DELETE"
+
+# check if that fails, cause there can be duplicates in tag or anything else
+# we should not proceed with deleting branch then
+`git tag $TAG_NAME $BRANCH_NAME` && `$COMMAND_TO_DELETE`
+# I don't know 
+
+echo "finish"
+
+# COMMIT_MSG=`git show -s --format=%s`
+# OUT=`python3 parsing.py "$COMMIT_MSG"`
+
+# git checkout -b $OUT
+
+# echo "$1"
+
+# In your shell
+# OUT=`python whatever.py`
+# echo $OUT
+# Will print abc, and it's stored in the variable `OUT` for later consumption.
