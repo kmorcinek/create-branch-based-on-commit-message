@@ -37,6 +37,8 @@ def parsing(commit):
         '"',
         '\'',
         '(',
+        '<',
+        '>',
         ')'
     ]
     for c in unwanted_chars:
