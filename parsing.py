@@ -1,3 +1,4 @@
+# inspired by https://github.com/marcinlisek/python-tasks/blob/main/branch-name-based-on-commit-name/parsing.py
 import sys
 
 argv = sys.argv[1:]
