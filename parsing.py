@@ -28,6 +28,7 @@ def parsing(commit):
     step3 = step2.replace(" ", "-")
 
     unwanted_chars = [
+        '#',
         '.',
         '`',
         '*',
@@ -52,6 +53,7 @@ assert parsing("feat: #OLDM-324 create product endpoint") == "feat/OLDM-324/crea
 assert parsing("fix: fix email") == "fix/fix-email"
 assert parsing("add new TODO") == "add-new-todo"
 assert parsing("add *new `TODO` (encapsulate?) 'later'.") == "add-new-todo-encapsulate-later"
+assert parsing("[product] #OLDM-324 create product endpoint") == "product-oldm-324-create-product-endpoint"
 # assert parsing("fix: #WW-11 improve error handling") == "fix/WW-11/wrong-branch"
 
 result = parsing(argv[0])
