@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if an argument is passed, if not default to "HEAD"
+COMMIT=${1:-HEAD}
+
+# Get the commit message of the specified commit (or latest if no argument is passed)
+COMMIT_MSG=$(git show -s --format=%s $COMMIT)
+
+# Output the commit message
+echo $COMMIT_MSG
