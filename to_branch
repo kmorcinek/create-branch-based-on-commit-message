@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-COMMIT_MSG=`git show -s --format=%s`
+# Check if an argument is passed, if not default to "HEAD"
+COMMIT=${1:-HEAD}
+
+# Get the commit message of the specified commit (or latest if no argument is passed)
+COMMIT_MSG=$(git show -s --format=%s $COMMIT)
 
 # Hardcoded path to python script, make it independent later
 OUT=`python3 /usr/local/bin/parsing.py "$COMMIT_MSG"`
